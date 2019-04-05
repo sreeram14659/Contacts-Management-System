@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add a new Contact</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function()
+		{
+			$("#address_btn").click(function()
+			{
+				$("#actual_address_field" ).clone().appendTo( "#address_empty").show();
+				//$("#address_btn_del").click(function()
+				$(document).on("click","#address_btn_del",function(){
+					$(this).parent("#actual_address_field").remove();
+				});
+			});
+			$("#phone_btn").click(function()
+			{
+				$("#actual_phone_field" ).clone().appendTo( "#phone_empty").show();
+				$(document).on("click","#phone_btn_del",function(){
+					$(this).parent("#actual_phone_field").remove();
+				});
+			});
+			$("#date_btn").click(function()
+			{
+				$("#actual_date_field" ).clone().appendTo( "#date_empty").show();
+				$(document).on("click","#date_btn_del",function(){
+					$(this).parent("#actual_date_field").remove();
+				});
+			});
+		});
+	</script>
+		
+</head>
+<body background-color:lightblue>
+	<h1>Add a new Contact</h1>
+	<form method="POST" action="submit_entry.php">
+		<div id="Contacts_info" class="container">
+			Full name:	<input type="text" name="First" placeholder="Enter your First name" class="form-control" required>
+			<br>
+			Middle Name:	<input type="text" name="middle" placeholder="Enter your Middle name" class="form-control">
+			<br>
+			Last Name:	<input type="text" name="Last" placeholder="Enter your last name" class="form-control" required>
+		</div>
+		
+		<button class="btn btn-space btn-success" id="address_btn" type="button">Add Address fields</button>
+		<br>
+		<div id="address_empty">
+		
+		</div>
+		<br>
+		<button type="button" class="btn btn-success" id="phone_btn">Add Phone fields</button>
+		<div id="phone_empty">
+		
+		</div>
+		<br>
+		<button type="button" class="btn btn-success" id="date_btn">Add date fields</button>
+		<div id="date_empty">
+		
+		</div>
+		<br>
+		
+		<!--
+			Submit button now...
+		-->
+		<input type="Submit" name="submit" value="Create New Entry" class="btn btn-primary">
+
+	</form>
+	<div id="actual_address_field" Style="display:none" class="container">
+		<input type="text" name="address_type[]" class="form-control" placeholder="Enter the Address Type">
+		<br>
+		<input type="text" name="address[]" class="form-control" placeholder="Enter the Address">
+		<br>
+		<input type="text" name="city[]" class="form-control" placeholder="Enter the City">
+		<br>
+		<input type="text" name="state[]" class="form-control" placeholder="Enter the State">
+		<br>
+		<input type="text" name="zip[]" class="form-control" placeholder="Enter the Zip">
+		<br>
+		<button class="btn btn-space btn-success" id="address_btn_del" type="button">Delete Address fields</button>
+		
+	</div>
+	<div id="actual_phone_field" Style="display:none" class="container">
+		<input type="text" name="phone_type[]" class="form-control" placeholder="Enter the Phone Type">
+		<br>
+		<input type="text" name="area_code[]" class="form-control" placeholder="Enter the Area code">
+		<br>
+		<input type="text" name="number[]" class="form-control" placeholder="Enter the Phone Number">
+		<br>
+		<button class="btn btn-space btn-success" id="phone_btn_del" type="button">Delete phone fields</button>
+		
+	</div>
+	<div id="actual_date_field" Style="display:none" class="container">
+		<input type="text" name="date_type[]" class="form-control" placeholder="Enter the Date Type">
+		<br>
+		<input type="date" name="actual_date[]" class="form-control" placeholder="Enter the Date">
+		<br>
+		<button class="btn btn-space btn-success" id="date_btn_del" type="button">Delete date fields</button>
+		
+	</div>
+</body>
+</html>

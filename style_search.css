@@ -1,0 +1,43 @@
+h1
+{
+  font-family: ubuntu;
+}
+#cust-bt-1
+{
+  margin-top: 20px;
+}
+.input-group
+{
+  margin-top: 70px;
+}
+.cust-class-1
+{
+  text-align: center;
+}
+/*	
+	<div id="actual_address_field" class="container">
+				<?php   
+					//We Might have multiple addresses and we have to print all of those. 
+					for ($i=0; $i < $Address_rows ; $i++) 
+					{
+						echo "<strong><br><h3>Address ",($i+1)," </h3></strong>";
+						echo "<button class='btn-group btn-lg btn btn-success' name='delete_this_entry' id='initiate_delete' style='text-align: center;'>Delete This Entry</button>";
+						echo "<br>Address Type: <br>";
+						echo "<input type='text' name='address_type[]' class='form-control' value='$AddressType[$i]'>";
+						//echo "<br>";
+						echo "Address: <br>";	
+						echo "<input type='text' name='address[]' class='form-control' value='$retrieved_address[$i]'>";
+						echo "<br>";
+						echo "City: <br>";	
+						echo "<input type='text' name='city[]' class='form-control' value='$retrieved_city[$i]'>";
+						echo "<br>";
+						echo "State: <br>";	
+						echo "<input type='text' name='state[]' class='form-control' value='$retrieved_state[$i]'>";
+						echo "<br>";
+						echo "Zip: <br>";
+						echo "<input type='text' name='zip[]' class='form-control' value='$retrieved_zip[$i]'>";
+						echo "<br>";	
+					}		
+				?> 
+			</div>*/
+			
