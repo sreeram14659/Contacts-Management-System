@@ -103,8 +103,6 @@
 		if(isset($_POST['entire_date_dataentry']))
 		{
 			$retrieved_from_ajax = $_POST['entire_date_dataentry'];
-			// echo $retrieved_from_ajax;
-			// echo "was here";
 			$Date_table = json_decode($retrieved_from_ajax,true);
 			print_r($Date_table);
 			$Date_id_to_mark = $Date_table["Date_id_ret"];
