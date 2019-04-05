@@ -77,8 +77,6 @@
 		{
 			//Verifying if the contact id is accessible.
 			$id_retrieved = $_GET['Contact_id'];
-			// echo "Lets See";
-			// echo $id_retrieved;
 			//Now that we have the unique Contact_id, we can begin to populate the front end part.
 			$Query_to_retrieve_contact_info = "SELECT Fname,Mname,Lname FROM contact WHERE Contact_id=$id_retrieved"; 
 			$Query_to_retrieve_address_info = "SELECT Address_id,Address_type,Address,City,State,Zip FROM Address WHERE Contact_id=$id_retrieved";
@@ -98,8 +96,6 @@
 			{
 				$Address_rows=mysqli_num_rows($process_address);
 				$fields=mysqli_num_fields($process_address);
-				// echo "ROWS = ",$rows;
-				// echo "Fields = ",$fields;
 				for ($i=0; $i < $Address_rows ; $i++) 
 				{ 
 					$ce=mysqli_fetch_array($process_address);
@@ -143,29 +139,6 @@
 					$retrieved_date[$i]=$cg['Date'];
 				}
 			}
-			//All the queries are processed now...
-			//Lets now check the output of the arrays.
-			// echo "<br>The entire array now is <br>";
-			// echo json_encode($AddressType);
-			// echo "<br>";
-			// echo json_encode($retrieved_address);
-			// echo "<br>";
-			// echo json_encode($retrieved_city);
-			// echo "<br>";
-			// echo json_encode($retrieved_state);
-			// echo "<br>";
-			// echo json_encode($retrieved_zip);
-			// echo "<br>";
-			// echo json_encode($retrieved_phonetype);
-			// echo "<br>";
-			// echo json_encode($retrieved_areacode);
-			// echo "<br>";
-			// echo json_encode($retrieved_number);
-			// echo "<br>";
-			// echo json_encode($retrieved_datetype);
-			// echo "<br>";
-			// echo json_encode($retrieved_date);
-			// echo "<br>";
 		}		
 	?>
 
@@ -235,7 +208,7 @@
 					
 				</div>
 			<?php
-				}//THis should be out of the div. Otherwise it wont print.
+				}
 			?>
 			
 	</form>
@@ -292,7 +265,7 @@
 					</script>
 				</div>
 			<?php
-				}//THis should be out of the div. Otherwise it wont print.
+				}
 			?>
 			
 	</form>
@@ -348,7 +321,7 @@
 				</div>
 				
 			<?php
-				}//THis should be out of the div. Otherwise it wont print.
+				}
 			?>
 			
 	</form>
